@@ -1,0 +1,22 @@
+{
+  "name": "la-montagne-projet1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/faking-it/la-montagne-projet1.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/faking-it/la-montagne-projet1/issues"
+  },
+  "homepage": "https://github.com/faking-it/la-montagne-projet1#readme",
+  "dependencies": {
+    "country-list": "^2.2.0"
+  }
+}
