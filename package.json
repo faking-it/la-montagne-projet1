@@ -1,5 +1,5 @@
 {
-  "name": "@fakinf-it/la-montagne-projet1",
+  "name": "@faking-it/la-montagne-projet1",
   "version": "1.0.0",
   "bin": {
     "holidates": "index.js"
