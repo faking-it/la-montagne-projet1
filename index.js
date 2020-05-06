@@ -1,18 +1,23 @@
 #!/usr/bin/env node
 
-//Récupération du PAYS dans l'input
+//Récupération du PAYS dans l'input + date courante
 const country = process.argv[2];
+const date = new Date().getFullYear();
 
 //Country-list
-const {
-  getCode,
-  getName
-} = require("country-list");
+const { getCode, getName } = require("country-list");
 
 //Mise en page
-console.log("\n---------------------------------------------------------------------------------");
-console.log("\n                            Public holidays in " + getName(getCode(country)));
-console.log("\n---------------------------------------------------------------------------------");
+console.log(
+  "\n---------------------------------------------------------------------------------"
+);
+console.log(
+  "\n                            Public holidays in " +
+    getName(getCode(country))
+);
+console.log(
+  "\n---------------------------------------------------------------------------------"
+);
 
 //Effet de chargement
 const ora = require("ora");
@@ -25,7 +30,12 @@ setTimeout(() => {
 //Exploitation de l'API public holidays
 const axios = require("axios");
 axios
-  .get("https://date.nager.at/api/v2/publicholidays/2020/" + getCode(country))
+  .get(
+    "https://date.nager.at/api/v2/publicholidays/" +
+      date +
+      "/" +
+      getCode(country)
+  )
   .then(function (response) {
     response.data.map(item => console.log(item.date, item.name));
   })
